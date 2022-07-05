@@ -5,20 +5,12 @@ const inputButton = document.getElementById("input-button")
 const ulEl = document.getElementById("ul-el")  
 let deleteButton = document.getElementById("delete-button")
 const tabButton = document.getElementById("tab-button")
-
-//localStorage.setItem("myLeads", "www.examplelead.com") 
-//localStorage.getItem("myLeads") 
-//console.log(("myLeads"))
-//localStorage.clear() 
-
+ 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads")) 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage 
     render(myLeads)
 } 
-// const tabs = [
-//     {url:"https://www.linkedin.com/in/per-harald-borgen/"}
-// ]
 
 tabButton.addEventListener("click", function(){    
     chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
@@ -27,7 +19,6 @@ tabButton.addEventListener("click", function(){
        render(myLeads)
     })   
 })
-
 
 inputButton.addEventListener("click", function(){  
     myLeads.push(inputEl.value)            
@@ -57,10 +48,6 @@ for (i = 0; i < leads.length; i++){
     </li>`
     
     ulEl.innerHTML = listItems 
-  
-// const li = document.createElement("li") 
-// li.textContent = myLeads[i] 
-// ulEl.append(li) 
 }
 } 
 
