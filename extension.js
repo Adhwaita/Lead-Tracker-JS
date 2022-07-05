@@ -31,6 +31,7 @@ inputButton.addEventListener("click", function(){
 deleteButton.addEventListener("dblclick", function(){     
     localStorage.clear()  
     myLeads = []
+    myLeads.push(inputEl.value) 
     render(myLeads)
   
  }) 
